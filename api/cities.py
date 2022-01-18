@@ -1,3 +1,5 @@
+""" List of the top 100 the most populated cities """
+
 cities = [
     'Tokyo',
     'Delhi',
@@ -48,7 +50,6 @@ cities = [
     'Medan',
     'Faisalabad',
     'Brasilia',
-    'Bucuresti',
     'Taiyuan',
     'Cirebon',
     'Izmir',
@@ -76,7 +77,6 @@ cities = [
     'Ahmedabad',
     'Chengdu',
     'Ankara',
-    'Haerbin',
     'Chongqing',
     'Hyderabad',
     'Dhaka',
@@ -98,5 +98,7 @@ cities = [
     'Granada',
     'Dresden',
     'Seattle',
-    'Warsaw'
+    'Warsaw',
+    'Krakow',
+    'Gdansk',
 ]

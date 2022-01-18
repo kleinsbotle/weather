@@ -1,5 +1,6 @@
 from rest_framework import serializers
-from .models import User, City, Weather
+
+from api.models import User, City, Forecast
 
 
 class UserSerializer(serializers.ModelSerializer):
@@ -16,7 +17,7 @@ class CitySerializer(serializers.ModelSerializer):
         fields = '__all__'
 
 
-class WeatherSerializer(serializers.ModelSerializer):
+class ForecastSerializer(serializers.ModelSerializer):
     class Meta:
-        model = Weather
-        fields = '__all__'
+        model = Forecast
+        fields = ['id', 'city_id', 'dt', 'temp', 'description']
