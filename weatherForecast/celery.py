@@ -6,7 +6,7 @@ from celery import Celery
 from django.conf import settings
 from celery.schedules import crontab
 
-# Set the default Django settings module for the 'celery' program., broker='redis://redis:6379/0'
+# Set the default Django settings module for the 'celery' program
 os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'weatherForecast.settings')
 
 app = Celery('weatherForecast')
@@ -18,11 +18,11 @@ app.config_from_object(settings, namespace='CELERY')
 app.conf.beat_schedule = {
     'collect forecast data': {
         'task': 'api.tasks.collect_forecast_data',
-        'schedule': crontab(),
+        'schedule': crontab(minute=0, hour='*/3'),
     }
 }
 
-# Load task modules from all registered Django apps.minute=0, hour='*/3'
+# Load task modules from all registered Django apps
 app.autodiscover_tasks()
 
 
