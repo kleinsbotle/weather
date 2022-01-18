@@ -1,0 +1,74 @@
+Metadata-Version: 2.1
+Name: django-pymemcache
+Version: 1.0.0
+Summary: Django cache backend based on Pinterest's pymemcache client.
+Home-page: https://github.com/django-pymemcache/django-pymemcache
+Author: James Socol
+Author-email: me@jamessocol.com
+License: Apache Software License 2.0
+Platform: UNKNOWN
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Environment :: Web Environment
+Classifier: Intended Audience :: Developers
+Classifier: Framework :: Django :: 2.2
+Classifier: Framework :: Django :: 3.0
+Classifier: License :: OSI Approved :: Apache Software License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Requires-Dist: Django (>=2.2)
+Requires-Dist: pymemcache
+
+django-pymemcache
+=================
+
+.. image:: https://travis-ci.org/django-pymemcache/django-pymemcache.svg?branch=master
+   :target: https://travis-ci.org/django-pymemcache/django-pymemcache
+.. image:: https://codecov.io/gh/django-pymemcache/django-pymemcache/branch/master/graph/badge.svg
+   :target: https://codecov.io/gh/django-pymemcache/django-pymemcache
+.. image:: https://img.shields.io/pypi/v/django-pymemcache.svg?style=flat
+   :target: https://pypi.org/project/django-pymemcache/
+.. image:: https://img.shields.io/pypi/djversions/django-pymemcache.svg?style=flat
+.. image:: https://img.shields.io/pypi/pyversions/django-pymemcache.svg?style=flat
+
+django-pymemcache is a Django cache backend that uses Pinterest's
+pymemcache_ library as the backend.
+
+Installation
+------------
+
+::
+
+    pip install django-pymemcache
+
+Usage
+-----
+
+Simply use it as any other `Cache backend <https://docs.djangoproject.com/en/stable/topics/cache/>`_, e.g.
+
+.. code-block:: python
+
+    CACHES = {
+        'default': {
+            'BACKEND': 'djpymemcache.backend.PyMemcacheCache',
+            'LOCATION': [
+               '127.0.0.1:11211',
+            ],
+            'OPTIONS': {
+                'serializer': <your_serializer>,
+                'deserializer': <your_deserializer>,
+            },
+        },
+    }
+
+Issues
+------
+
+    https://github.com/django-pymemcache/django-pymemcache/issues
+
+.. _pymemcache: https://github.com/pinterest/pymemcache
+
+
