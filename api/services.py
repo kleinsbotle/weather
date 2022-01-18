@@ -14,7 +14,7 @@ def process_forecast(forecast):
     """
     Gets timestamp, temperature and description from forecast data
     :param forecast:
-    :return:
+    :return: dict objects with required information
     """
     processed_forecast = {
         'dt': datetime.fromtimestamp(forecast['dt']),

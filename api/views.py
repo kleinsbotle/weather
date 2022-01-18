@@ -73,7 +73,6 @@ class ReportView(APIView):
         :param request:
         :param start: start of the period. Example: 2022-01-17T17:00:00
         :param end: end of the period.
-        :return:
         """
         response = HttpResponse(content_type='text/csv')
         response['Content-Disposition'] = \
